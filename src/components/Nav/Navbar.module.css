@@ -1,0 +1,37 @@
+.link::before {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  height: 15%;
+  background: #fde400;
+  width: 0%;
+  transition: width ease 0.3s;
+}
+
+.link:hover::before {
+  width: 50%;
+}
+
+.active::before {
+  width: 50%;
+}
+/* Navbar.module.css */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-nav {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}

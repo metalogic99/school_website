@@ -1,0 +1,7 @@
+.editor ul>li {
+  @apply list-inside list-disc pl-[1rem];
+}
+
+.editor ol>li {
+  @apply my-3 list-decimal pl-3;
+}

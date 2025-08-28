@@ -1,0 +1,8 @@
+.blog-content h1,
+.blog-content h2 {
+  @apply text-3xl font-semibold;
+}
+
+.blog-content h3 {
+  @apply font-semibold;
+}
