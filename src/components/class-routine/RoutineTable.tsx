@@ -55,6 +55,8 @@ export default function RoutineTable({ routines }: { routines: any }) {
                   <SelectItem value="8">Eight</SelectItem>
                   <SelectItem value="9">Nine</SelectItem>
                   <SelectItem value="10">Ten</SelectItem>
+                  <SelectItem value="11">Eleven</SelectItem>
+                  <SelectItem value="12">Twelve</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
