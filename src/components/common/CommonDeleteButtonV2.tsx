@@ -41,9 +41,9 @@ export default function CommonDeleteButtonV2({
 
     const res = await deleteAction(id);
     toast({
-      variant: res.success ? "success" : "destructive",
-      title: res.success ? "Deletion Successful!" : "Failed to Delete !",
-      description: res.message,
+      variant: res?.success ? "success" : "destructive",
+      title: res?.success ? "Deletion Successful!" : "Failed to Delete !",
+      description: res?.message,
     });
 
     // if (res.success) return
