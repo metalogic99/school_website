@@ -95,7 +95,7 @@ const navsLinks = [
     to: "/admin/donors",
   },
   {
-    title: "Contact",
+    title: "Feedback",
     icon: <Contact size={30} strokeWidth={1} />,
     to: "/admin/contact",
   },

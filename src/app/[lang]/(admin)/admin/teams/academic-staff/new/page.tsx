@@ -126,30 +126,18 @@ const page = () => {
           <LabelWithAsterik>Type</LabelWithAsterik>
           <Select
             {...register("type")}
+            defaultValue="academic_staff"
             onValueChange={(val) => {
               setValue("type", val);
               trigger("type");
             }}
           >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a type" />
+              <SelectValue />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectItem value="bod">Board of Director</SelectItem>
-                <SelectItem value="director">Director</SelectItem>
-                <SelectItem value="finance">Finance</SelectItem>
                 <SelectItem value="academic_staff">Academic Staff</SelectItem>
-                <SelectItem value="non_academic_staff">
-                  Non Academic Staff
-                </SelectItem>
-                <SelectItem value="management">Management</SelectItem>
-                <SelectItem value="sports">Sports</SelectItem>
-                <SelectItem value="construction">Construction</SelectItem>
-                <SelectItem value="examination">Examination</SelectItem>
-                <SelectItem value="cultural">Cultural</SelectItem>
-                <SelectItem value="smc">S.M.C</SelectItem>
-                <SelectItem value="tpc">T.P.C</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
@@ -157,6 +145,7 @@ const page = () => {
             {errors.type && errors.type.message}
           </p>
         </div>
+
         {/* POSITION */}
         <div>
           <LabelWithAsterik>Designation</LabelWithAsterik>

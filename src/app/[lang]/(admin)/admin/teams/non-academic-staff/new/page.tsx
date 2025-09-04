@@ -115,7 +115,7 @@ const page = () => {
           </p>
         </div>
         {/* TYPE */}
-        <div>
+        {/* <div>
           <Label>Type</Label>
           <Select
             {...register("type")}
@@ -143,6 +143,31 @@ const page = () => {
                 <SelectItem value="cultural">Cultural</SelectItem>
                 <SelectItem value="smc">S.M.C</SelectItem>
                 <SelectItem value="tpc">T.P.C</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+          <p className="text-xs text-red-500">
+            {errors.type && errors.type.message}
+          </p>
+        </div> */}
+        <div>
+          <Label>Type</Label>
+          <Select
+            {...register("type")}
+            defaultValue="non_academic_staff"
+            onValueChange={(val) => {
+              setValue("type", val);
+              trigger("type");
+            }}
+          >
+            <SelectTrigger className="w-full">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectItem value="non_academic_staff">
+                  Non Academic Staff
+                </SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>

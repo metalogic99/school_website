@@ -55,7 +55,7 @@ const ContactsTable: React.FC = () => {
 
   return (
     <div className="p-4">
-      <h2 className="mb-4 text-2xl font-semibold">Contacts</h2>
+      <h2 className="mb-4 text-2xl font-semibold">Feedbacks</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200 border border-gray-200">
           <thead className="bg-gray-100">

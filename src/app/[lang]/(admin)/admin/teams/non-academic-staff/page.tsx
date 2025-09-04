@@ -29,7 +29,7 @@ export default async function page() {
           <H2 className=" font-semibold">Non Academic Staff</H2>
           <Button asChild>
             <Link
-              href="/admin/teams/management/new"
+              href="/admin/teams/non-academic-staff/new"
               className="flex items-center gap-2 text-white"
             >
               <PlusCircle size={16} /> Add Member
