@@ -16,12 +16,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { teamSchema, TTeamForm } from "@/schemas/team.schema";
 import { addNewTeamMember } from "@/server/actions/teams/teams.action";
 import CloudinaryUpload from "@/components/common/CloudinaryUpload";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { transform } from "next/dist/build/swc";
+import ImageUpload from "@/components/admin/teams/ImageUpload";
 
 const page = () => {
   const { toast } = useToast();
@@ -29,6 +30,7 @@ const page = () => {
   const [preview, setPreview] = useState<any>(null);
   const [image, setImage] = useState<File | null>(null);
   const router = useRouter();
+  const imageRef = useRef<HTMLInputElement | null>(null);
   const {
     handleSubmit,
     register,
@@ -90,7 +92,7 @@ const page = () => {
               />
             </div>
           )}
-          <input
+          {/* <input
             accept=".pdf, image/*, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             type="file"
             onChange={(e) => {
@@ -101,6 +103,11 @@ const page = () => {
                 setPreview(previewUrl);
               }
             }}
+          /> */}
+          <ImageUpload
+            imageRef={imageRef}
+            setImage={setImage}
+            setPreview={setPreview}
           />
           <p className="text-xs text-red-500">
             {errors.image && String(errors.image.message)}

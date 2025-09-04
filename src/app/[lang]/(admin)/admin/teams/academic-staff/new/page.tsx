@@ -15,15 +15,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CloudinaryUpload from "@/components/common/CloudinaryUpload";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { teacherSchema, TTeacherForm } from "@/schemas/teacher.schema";
 import { addNewTeacherMember } from "@/server/actions/teacher/teacher.action";
 import { Label } from "@/components/ui/label";
 import LabelWithAsterik from "@/components/LabelWithAsterik";
+import ImageUpload from "@/components/admin/teams/ImageUpload";
 
 const page = () => {
+  const imageRef = useRef<HTMLInputElement | null>(null);
+
   const { toast } = useToast();
   const [preview, setPreview] = useState<any>(null);
   const [image, setImage] = useState<File | null>(null);
@@ -98,18 +101,31 @@ const page = () => {
               />
             </div>
           )}
-          <input
+          {/* <input
+            ref={imageRef}
+            hidden
             accept=".pdf, image/*, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             type="file"
             onChange={(e) => {
               if (e.target.files) {
                 setImage(e.target.files[0]);
                 const previewUrl = URL.createObjectURL(e.target.files[0]);
-
                 setPreview(previewUrl);
               }
             }}
           />
+          <Button
+            onClick={() => imageRef.current?.click()}
+            className="bg-green-500 px-3 py-2 text-white"
+          >
+            Choose Photo
+          </Button> */}
+          <ImageUpload
+            imageRef={imageRef}
+            setImage={setImage}
+            setPreview={setPreview}
+          />
+
           <p className="text-xs text-red-500">
             {errors.image && String(errors.image.message)}
           </p>
