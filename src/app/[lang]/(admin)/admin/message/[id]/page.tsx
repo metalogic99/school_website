@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 interface Message {
   _id: string;
   designation: string;
+  designatinNepali: string;
   fullname: string;
   email: string;
   phone: string;

@@ -244,36 +244,13 @@ export const aboutSchoolSubMenu = {
     { title: "Introduction", to: "/about-school" },
     { title: "Mission", to: "/about-school/mission" },
     { title: "Vision", to: "/about-school/vision" },
-    {
-      title: "Message of S.M.C Chairman",
-      to: "/education-network/message-from-smc-chairman",
-    },
-    {
-      title: "Message of T.P.C Chairman",
-      to: "/education-network/message-from-tpc-chairman",
-    },
-    {
-      title: "Message of Head Master",
-      to: "/education-network/message-from-principal",
-    },
     // { title: "Gallery", to: "/gallery" },
   ],
   np: [
     { title: "विद्यालयको पृष्ठभूमि", to: "/about-school" },
     { title: "हाम्रो मिशन", to: "/about-school/mission" },
     { title: "हाम्रो भिजन", to: "/about-school/vision" },
-    {
-      title: "बि.ब्य.स. अध्यक्षको सन्देश",
-      to: "/education-network/message-from-smc-chairman",
-    },
-    {
-      title: "शि.अ.स. अध्यक्षको सन्देश",
-      to: "/education-network/message-from-tpc-chairman",
-    },
-    {
-      title: "प्रधानाध्यापकको सन्देश",
-      to: "/education-network/message-from-principal",
-    },
+
     // { title: "ग्यालेरी", to: "/gallery" },
   ],
 };

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
@@ -24,10 +24,35 @@ import {
 import MobileNav from "./MobileNav";
 import { Lang } from "@/types";
 import { Button } from "../ui/button";
+import { getAllMessages } from "@/server/actions/messages/message.action";
+
+interface Message {
+  _id: string;
+  designation: string;
+  designationNepali: string;
+  fullname: string;
+  email: string;
+  phone: string;
+  message: string;
+  image: { secure_url: string; public_id: string };
+}
 
 const DesktopNav = ({ lang }: { lang: Lang }) => {
   const pathname = usePathname();
   const isEnglish = lang === "en";
+  const [messages, setMessages] = useState<Message[]>([]);
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const response = await getAllMessages();
+
+      if (!response || !response.success || !response.data) {
+        setMessages([]);
+      } else {
+        setMessages(response.data);
+      }
+    };
+    fetchMessages();
+  }, []);
 
   return (
     <>
@@ -67,6 +92,20 @@ const DesktopNav = ({ lang }: { lang: Lang }) => {
                               className="cursor-pointer rounded-full text-[13px] font-medium  focus:bg-primary/20 "
                             >
                               <Link href={m.to}>{m.title}</Link>
+                            </DropdownMenuItem>
+                          </li>
+                        ))}
+                        {messages.map((m) => (
+                          <li key={m._id}>
+                            <DropdownMenuItem
+                              asChild
+                              className="cursor-pointer rounded-full text-[13px] font-medium  focus:bg-primary/20 "
+                            >
+                              <Link href={`/education-network/${m._id}`}>
+                                {lang === "en"
+                                  ? `Message from the ${m.designation}`
+                                  : `${m.designationNepali}को सन्देश`}
+                              </Link>
                             </DropdownMenuItem>
                           </li>
                         ))}
