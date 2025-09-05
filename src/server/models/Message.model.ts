@@ -7,6 +7,7 @@ const MessageSchema = new Schema(
       required: true,
     },
     designation: { type: String, required: true },
+    designationNepali: { type: String, required: true },
     phone: {
       type: String,
       required: true,

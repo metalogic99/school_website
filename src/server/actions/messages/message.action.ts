@@ -13,7 +13,8 @@ export const addMessage = async (data: MessageInput, imgData: any) => {
 
   if (parsedData.success && imgData) {
     const { secure_url, public_id } = imgData;
-    const { fullname, phone, email, message, designation } = parsedData.data;
+    const { fullname, phone, email, message, designation, designationNepali } =
+      parsedData.data;
 
     try {
       await connectDB();
@@ -21,6 +22,7 @@ export const addMessage = async (data: MessageInput, imgData: any) => {
         fullname,
         phone,
         designation,
+        designationNepali,
         email,
         message,
         image: { secure_url, public_id },
@@ -48,6 +50,7 @@ interface TMessage {
   email: string;
   phone: string;
   designation: string;
+  designationNepali: string;
   message: string;
   image?: {
     secure_url: string;
@@ -61,10 +64,18 @@ export const editMessage = async (id: string, data: any, imgData?: any) => {
 
   if (id && parsedData.success) {
     try {
-      const { fullname, email, phone, message, designation } = parsedData.data;
+      const {
+        fullname,
+        email,
+        phone,
+        message,
+        designation,
+        designationNepali,
+      } = parsedData.data;
       const newUpdatedMessage: TMessage = {
         fullname,
         designation,
+        designationNepali,
         email,
         phone,
         message,

@@ -82,6 +82,7 @@ const UpdateMessageForm = ({ member }: { member: Message }) => {
         email: data.email,
         phone: data.phone,
         designation: data.designation,
+        designationNepali: data.designationNepali,
         message: msg,
       };
       const res = await editMessage(member._id, formdata, imgData);
