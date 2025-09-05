@@ -18,6 +18,7 @@ import { editMessage } from "@/server/actions/messages/message.action";
 interface Message {
   _id: string;
   designation: string;
+  designationNepali: string;
   fullname: string;
   email: string;
   phone: string;
@@ -45,6 +46,7 @@ const UpdateMessageForm = ({ member }: { member: Message }) => {
       phone: member.phone,
       message: member.message,
       designation: member.designation,
+      designationNepali: member.designationNepali,
     },
   });
 
@@ -127,6 +129,17 @@ const UpdateMessageForm = ({ member }: { member: Message }) => {
             />
             <p className="text-xs text-red-500">
               {errors.designation && errors.designation.message}
+            </p>
+          </div>
+
+          <div>
+            <Label>Designation in Nepali</Label>
+            <Input
+              {...register("designationNepali")}
+              placeholder="Enter designation Name in Nepali"
+            />
+            <p className="text-xs text-red-500">
+              {errors.designationNepali && errors.designationNepali.message}
             </p>
           </div>
 

@@ -9,6 +9,7 @@ import UpdateMessageForm from "@/components/admin/message/UpdateMessage";
 interface Message {
   _id: string;
   designation: string;
+  designationNepali: string;
   fullname: string;
   email: string;
   phone: string;

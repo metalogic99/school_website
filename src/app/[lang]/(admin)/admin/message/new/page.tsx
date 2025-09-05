@@ -134,6 +134,17 @@ const page = () => {
           </p>
         </div>
         <div>
+          <Label>Designation in Nepali</Label>
+          <Input
+            {...register("designationNepali")}
+            placeholder="Enter designation Name in Nepali"
+          />
+          <p className="text-xs text-red-500">
+            {errors.designationNepali && errors.designationNepali.message}
+          </p>
+        </div>
+
+        <div>
           <Label>Phone No.</Label>
           <Input {...register("phone")} placeholder="Eg: 98XXXXXXX" />
           <p className="text-xs text-red-500">
